@@ -1,0 +1,66 @@
+{% extends 'codeverse/base.html' %}
+{% block content %}
+
+<h1>Codeverse Roadmap</h1>
+
+<h2>Year 1</h2>
+<ul>
+    {% for topic in year1_topics %}
+        <li>
+            {{ topic.name }} — <em>{{ topic.status }}</em>
+            <p>{{ topic.description }}</p>
+            <p><strong>Avoid:</strong> {{ topic.not_to_do }}</p>
+            <form action="{% url 'update_status' topic.id %}" method="post" style="display:inline;">
+                {% csrf_token %}
+                <select name="status">
+                    <option value="not_started" {% if topic.status == "not_started" %}selected{% endif %}>Not Started</option>
+                    <option value="in_progress" {% if topic.status == "in_progress" %}selected{% endif %}>In Progress</option>
+                    <option value="completed" {% if topic.status == "completed" %}selected{% endif %}>Completed</option>
+                </select>
+                <button type="submit">Update</button>
+            </form>
+        </li>
+    {% endfor %}
+</ul>
+
+<h2>Year 2</h2>
+<ul>
+    {% for topic in year2_topics %}
+        <li>
+            {{ topic.name }} — <em>{{ topic.status }}</em>
+            <p>{{ topic.description }}</p>
+            <p><strong>Avoid:</strong> {{ topic.not_to_do }}</p>
+            <form action="{% url 'update_status' topic.id %}" method="post" style="display:inline;">
+                {% csrf_token %}
+                <select name="status">
+                    <option value="not_started" {% if topic.status == "not_started" %}selected{% endif %}>Not Started</option>
+                    <option value="in_progress" {% if topic.status == "in_progress" %}selected{% endif %}>In Progress</option>
+                    <option value="completed" {% if topic.status == "completed" %}selected{% endif %}>Completed</option>
+                </select>
+                <button type="submit">Update</button>
+            </form>
+        </li>
+    {% endfor %}
+</ul>
+
+<h2>Year 3</h2>
+<ul>
+    {% for topic in year3_topics %}
+        <li>
+            {{ topic.name }} — <em>{{ topic.status }}</em>
+            <p>{{ topic.description }}</p>
+            <p><strong>Avoid:</strong> {{ topic.not_to_do }}</p>
+            <form action="{% url 'update_status' topic.id %}" method="post" style="display:inline;">
+                {% csrf_token %}
+                <select name="status">
+                    <option value="not_started" {% if topic.status == "not_started" %}selected{% endif %}>Not Started</option>
+                    <option value="in_progress" {% if topic.status == "in_progress" %}selected{% endif %}>In Progress</option>
+                    <option value="completed" {% if topic.status == "completed" %}selected{% endif %}>Completed</option>
+                </select>
+                <button type="submit">Update</button>
+            </form>
+        </li>
+    {% endfor %}
+</ul>
+
+{% endblock %}
