@@ -3,7 +3,7 @@ from .models import Topic
 from .models import Progress
 
 class TopicAdmin(admin.ModelAdmin):
-    list_display = ('name', 'year', 'order')
+    list_display = ('name', 'year', 'order', 'created_at', 'updated_at')
     ordering = ('year', 'order')
 
 admin.site.register(Topic, TopicAdmin)

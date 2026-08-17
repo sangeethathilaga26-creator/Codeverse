@@ -1,16 +1,27 @@
 from django.db import models
 from django.contrib.auth.models import User
 
-class Topic(models.Model):
+
+class TimeStampedModel(models.Model):
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        abstract = True
+
+
+class Topic(TimeStampedModel):
     name = models.CharField(max_length=100)
     year = models.IntegerField(default=1)
     order = models.IntegerField(default=1)
     description = models.TextField(default="")
     not_to_do = models.TextField(default="")
 
+    def __str__(self):
+        return self.name
 
 
-class Progress(models.Model):
+class Progress(TimeStampedModel):
     STATUS_CHOICES = [
         ('not_started', 'Not Started'),
         ('in_progress', 'In Progress'),
