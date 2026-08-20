@@ -50,3 +50,9 @@ def update_status(request, topic_id):
             progress.status = new_status
             progress.save()
     return redirect('home')
+
+
+# NEW — shows the full detail page for one topic
+def topic_detail(request, topic_id):
+    topic = get_object_or_404(Topic, id=topic_id)
+    return render(request, 'codeverse/topic_detail.html', {'topic': topic})

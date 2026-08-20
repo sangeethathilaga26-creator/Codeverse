@@ -16,6 +16,9 @@ class Topic(TimeStampedModel):
     order = models.IntegerField(default=1)
     description = models.TextField(default="")
     not_to_do = models.TextField(default="")
+    key_topics = models.TextField(default="", blank=True)
+    why_it_matters = models.TextField(default="", blank=True)
+    code_example = models.TextField(default="", blank=True)
 
     def __str__(self):
         return self.name

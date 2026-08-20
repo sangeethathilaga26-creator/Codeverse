@@ -8,4 +8,5 @@ path('', views.home, name='home'),
 path('signup/', views.signup_view, name='signup'),
 path('logout/', auth_views.LogoutView.as_view(), name='logout'),
 path('update-status/<int:topic_id>/', views.update_status, name='update_status'),
+path('topic/<int:topic_id>/', views.topic_detail, name='topic_detail'),
 ]

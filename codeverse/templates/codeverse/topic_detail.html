@@ -1,0 +1,25 @@
+{% extends 'codeverse/base.html' %}
+
+{% block content %}
+<div class="container mt-4">
+    <a href="{% url 'home' %}" class="btn btn-outline-secondary mb-3">&larr; Back to Roadmap</a>
+
+    <h1>{{ topic.name }}</h1>
+    <p class="text-muted">Year {{ topic.year }}</p>
+
+    <h4 class="mt-4">Description</h4>
+    <p>{{ topic.description }}</p>
+
+    <h4 class="mt-4">Key Topics to Learn</h4>
+    <p style="white-space: pre-line;">{{ topic.key_topics }}</p>
+
+    <h4 class="mt-4">Why It Matters</h4>
+    <p style="white-space: pre-line;">{{ topic.why_it_matters }}</p>
+
+    <h4 class="mt-4">Code Example</h4>
+    <pre class="bg-dark text-light p-3 rounded"><code>{{ topic.code_example }}</code></pre>
+
+    <h4 class="mt-4">Avoid</h4>
+    <p class="text-danger">{{ topic.not_to_do }}</p>
+</div>
+{% endblock %}

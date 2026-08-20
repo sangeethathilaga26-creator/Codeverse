@@ -17,6 +17,7 @@
             <h5 class="card-title text-primary">{{ topic.name }} <small class="text-muted">— {{ topic.status }}</small></h5>
             <p class="card-text">{{ topic.description }}</p>
             <p class="text-danger"><strong>Avoid:</strong> {{ topic.not_to_do }}</p>
+            <a href="{% url 'topic_detail' topic.id %}" class="btn btn-outline-primary btn-sm mb-2">View Details</a>
             <form action="{% url 'update_status' topic.id %}" method="post" class="d-flex align-items-center gap-2">
                 {% csrf_token %}
                 <select name="status" class="form-select form-select-sm w-auto">
@@ -37,6 +38,7 @@
             <h5 class="card-title text-primary">{{ topic.name }} <small class="text-muted">— {{ topic.status }}</small></h5>
             <p class="card-text">{{ topic.description }}</p>
             <p class="text-danger"><strong>Avoid:</strong> {{ topic.not_to_do }}</p>
+            <a href="{% url 'topic_detail' topic.id %}" class="btn btn-outline-primary btn-sm mb-2">View Details</a>
             <form action="{% url 'update_status' topic.id %}" method="post" class="d-flex align-items-center gap-2">
                 {% csrf_token %}
                 <select name="status" class="form-select form-select-sm w-auto">
@@ -57,6 +59,7 @@
             <h5 class="card-title text-primary">{{ topic.name }} <small class="text-muted">— {{ topic.status }}</small></h5>
             <p class="card-text">{{ topic.description }}</p>
             <p class="text-danger"><strong>Avoid:</strong> {{ topic.not_to_do }}</p>
+            <a href="{% url 'topic_detail' topic.id %}" class="btn btn-outline-primary btn-sm mb-2">View Details</a>
             <form action="{% url 'update_status' topic.id %}" method="post" class="d-flex align-items-center gap-2">
                 {% csrf_token %}
                 <select name="status" class="form-select form-select-sm w-auto">
